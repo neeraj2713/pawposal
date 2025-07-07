@@ -4,6 +4,8 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 import { FeaturesSectionDemo } from "@/components/ui/feature-section"
 import { FlipWords } from "@/components/ui/flip-words"
 import { HeroParallax } from "@/components/ui/hero-parallax"
+import { Vortex } from "@/components/ui/vortex"
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
 import {
   Navbar,
   NavBody,
@@ -16,6 +18,7 @@ import {
   NavbarButton,
 } from "@/components/ui/resizable-navbar"
 import { useState } from "react"
+import Footer from "@/components/ui/footer"
 
 export default function HomePage() {
   const [isOpen, setIsOpen] = useState(false)
@@ -79,6 +82,28 @@ export default function HomePage() {
       thumbnail: "https://images.unsplash.com/photo-1683836809739-c10a7be81028?q=80&w=2032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
+
+  const testimonials = [
+    {
+      id: 1,
+      name: "Alice",
+      designation: "Product Designer",
+      image: "/testimonials/alice.jpg",
+    },
+    {
+      id: 2,
+      name: "Bob",
+      designation: "Full Stack Developer",
+      image: "/testimonials/bob.jpg",
+    },
+    {
+      id: 3,
+      name: "Carol",
+      designation: "CEO, Example Inc.",
+      image: "/testimonials/carol.jpg",
+    },
+  ];
+
 
   const words = [
     'better',
@@ -152,6 +177,30 @@ export default function HomePage() {
 
       {/* Feature Section */}
       <FeaturesSectionDemo/>
+
+      {/* Team Section */}
+      <section className="my-20">
+        <div className="w-[calc(100%-4rem)] mx-auto rounded-md h-[30rem] overflow-hidden">
+          <Vortex
+            backgroundColor="black"
+            className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
+          >
+            <h2 className="text-white text-3xl md:text-5xl font-bold text-center">
+              What People Are Saying
+            </h2>
+            <p className="text-white text-sm md:text-xl max-w-xl mt-4 text-center">
+              Hear from our amazing users who’ve made their workflow magical.
+            </p>
+            <div className="flex items-center justify-center gap-6 mt-10">
+              <AnimatedTooltip items={testimonials} />
+            </div>
+          </Vortex>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <Footer/>
+
     </>
   );
 }
