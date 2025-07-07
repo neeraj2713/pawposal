@@ -1,6 +1,7 @@
 'use client'
 
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision"
+import { FeaturesSectionDemo } from "@/components/ui/feature-section"
 import { FlipWords } from "@/components/ui/flip-words"
 import { HeroParallax } from "@/components/ui/hero-parallax"
 import {
@@ -14,7 +15,6 @@ import {
   NavbarLogo,
   NavbarButton,
 } from "@/components/ui/resizable-navbar"
-import { span } from "framer-motion/client"
 import { useState } from "react"
 
 export default function HomePage() {
@@ -25,7 +25,7 @@ export default function HomePage() {
     { name: "Features", link: "#features" },
     { name: "Pricing", link: "#pricing" },
     { name: "Contact", link: "#contact" },
-  ]
+  ];
 
   const products = [
     {
@@ -78,7 +78,7 @@ export default function HomePage() {
       link: "#",
       thumbnail: "https://images.unsplash.com/photo-1683836809739-c10a7be81028?q=80&w=2032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
-  ]
+  ];
 
   const words = [
     'better',
@@ -149,6 +149,9 @@ export default function HomePage() {
           </div>
         </BackgroundBeamsWithCollision>
       </section>
+
+      {/* Feature Section */}
+      <FeaturesSectionDemo/>
     </>
   );
 }
